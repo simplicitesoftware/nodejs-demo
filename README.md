@@ -8,23 +8,34 @@ Web frontend demo
 This project is a web frontend demo using the Node.js API to connect
 to a Simplicit&eacute;&reg; backend instance.
 
+Usage
+-----
 
-Deploy
-------
+This project is packaged to deploy on CloudFoundry but can also be used locally.
+
+To run it clocally you need to install (or upgrade) dependencies:
+
+	npm install q express jade simplicite
+
+Then you can run the application by:
+
+	node app.js
+
+The default URL to point to is: `http://localhost:3000`
+
+Usage on CloudFoundry
+---------------------
 
 Adjust the `manifest.yml` to your needs:
 
 - The deployment name, host and domain
 - The host, port, root environment variables pointing to the above Simplicit&eacute;&reg; instance
 
-Deploy the app using JazzHub deploy features or manually by:
+To deploy manually use:
 
 	cf push
 
-Undeploy
---------
-
-Undeploy using JazzHub undeploy features or manually by:
+To undeploy manually use:
 
 	cf delete <deployment name>
 
