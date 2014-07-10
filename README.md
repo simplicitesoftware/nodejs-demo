@@ -1,5 +1,4 @@
 ![Simplicit&eacute; Software](http://www.simplicitesoftware.com/logos/logo250.png)
-
 ---
 
 Web frontend demo
