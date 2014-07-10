@@ -1,7 +1,7 @@
 ---
 applications:
-- name: simplicite-node-server
-  host: simplicite-node-server
+- name: nodejs-demo
+  host: nodejs-demo
   command: node app.js
   path: .
   domain: mybluemix.net

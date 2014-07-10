@@ -1,5 +1,5 @@
 {
-	"name": "simplicite-node-server",
+	"name": "nodejs-demo",
 	"version": "0.0.1",
 	"description": "A sample Node.js app for Simplicite(R)",
 	"dependencies": {
@@ -10,5 +10,6 @@
 	"engines": {
 		"node": "*"
 	},
-	"repository": {}
+	"repository": {
+	}
 }
