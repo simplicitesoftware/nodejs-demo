@@ -7,9 +7,9 @@ app.set('views', __dirname + '/views');
 var host = (process.env.VCAP_APP_HOST || 'localhost');
 var port = (process.env.VCAP_APP_PORT || 3000);
 
-var simpliciteHost = process.env.SIMPLICITE_HOST || 'simplicite-demo.mybluemix.net';
-var simplicitePort = process.env.SIMPLICITE_POST || 80;
-var simpliciteRoot = process.env.SIMPLICITE_ROOT || '';
+var simpliciteHost = process.env.SIMPLICITE_HOST || 'localhost';
+var simplicitePort = process.env.SIMPLICITE_POST || 8080;
+var simpliciteRoot = process.env.SIMPLICITE_ROOT || 'demo';
 
 var demo = require('simplicite').session({ debug: false, host: simpliciteHost, port: simplicitePort, root: simpliciteRoot })
 
