@@ -1,23 +1,20 @@
 doctype html
-html(lang='en')
+html(lang="en")
   head
-    title Simplicit&eacute;&reg; node server
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    link(rel='shortcut icon', href='favicon.ico')
-    link(rel='stylesheet', href='bootstrap/css/bootstrap.min.css')
-    //link(rel='stylesheet', href='bootstrap/css/bootstrap-theme.min.css')
-    script(type='text/javascript', src='jquery/jquery.js')
-    script(type='text/javascript', src='bootstrap/js/bootstrap.min.js')
-    script(type='text/javascript').
+    include head
+    script(type="text/javascript").
       $(document).ready(function() {
           var grant = !{grant};
+          $("#grant-picture").append($("<img/>", { src: "data:" + grant.picture.mime + ";base64," + grant.picture.content }));
+          $("#grant-info").append($("<h3/>").text(grant.firstname + " " + grant.lastname)).append($("<p/>").text(grant.login));
       });
   body
-    div.container(style='margin-top: 25px')
+    div.container(style="margin-top: 25px")
       div.well
-        div(style='text-align: center;')
-          img(src='logo.png', alt='Simplicit&eacute; Software', style='width: 100%; max-width: 500px;')
+        div(style="text-align: center;")
+          img(src="logo.png", alt="Simplicit&eacute; Software", style="width: 100%; max-width: 500px;")
       div.row
-        #grant.col-lg-12
+        #grant-picture.col-lg-3
+        #grant-info.col-lg-9
       hr
-      p(style='text.align: center;') &copy; Simplict&eacute; Software
+      p(style="text.align: center;") &copy; Simplict&eacute; Software
