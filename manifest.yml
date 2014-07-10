@@ -1,0 +1,14 @@
+---
+applications:
+- name: simplicite-node-server
+  host: simplicite-node-server
+  command: node app.js
+  path: .
+  domain: mybluemix.net
+  instances: 1
+  disk_quota: 1024M
+  memory: 128M
+  env:
+    SIMPLICITE_HOST: "simplicite-demo.mybluemix.net"
+    SIMPLICITE_PORT: 80
+    SIMPLICITE_ROOT: ""

@@ -1,0 +1,23 @@
+doctype html
+html(lang='en')
+  head
+    title Simplicit&eacute;&reg; node server
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='shortcut icon', href='favicon.ico')
+    link(rel='stylesheet', href='bootstrap/css/bootstrap.min.css')
+    //link(rel='stylesheet', href='bootstrap/css/bootstrap-theme.min.css')
+    script(type='text/javascript', src='jquery/jquery.js')
+    script(type='text/javascript', src='bootstrap/js/bootstrap.min.js')
+    script(type='text/javascript').
+      $(document).ready(function() {
+          var grant = !{grant};
+      });
+  body
+    div.container(style='margin-top: 25px')
+      div.well
+        div(style='text-align: center;')
+          img(src='logo.png', alt='Simplicit&eacute; Software', style='width: 100%; max-width: 500px;')
+      div.row
+        #grant.col-lg-12
+      hr
+      p(style='text.align: center;') &copy; Simplict&eacute; Software

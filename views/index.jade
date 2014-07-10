@@ -1,0 +1,46 @@
+doctype html
+html(lang='en')
+  head
+    title Simplicit&eacute;&reg; node server
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='shortcut icon', href='favicon.ico')
+    link(rel='stylesheet', href='bootstrap/css/bootstrap.min.css')
+    //link(rel='stylesheet', href='bootstrap/css/bootstrap-theme.min.css')
+    script(type='text/javascript', src='jquery/jquery.js')
+    script(type='text/javascript', src='bootstrap/js/bootstrap.min.js')
+    script(type='text/javascript').
+      $(document).ready(function() {
+          function row() { return $('<div/>').addClass('row'); }
+          function cell(span) { return $('<div/>').addClass('col-lg-' + span); }
+          function panel(body, heading, style, span) {
+              var p = $('<div/>').addClass('panel panel-' + (style === undefined ? 'default' : style));
+              p.append($('<div/>').addClass('panel-heading').append($('<h3/>').addClass('panel-title').append(heading)));
+              p.append($('<div/>').addClass('panel-body').append(body));
+              if (span) return cell(span).append(p);
+              return p;
+          }
+          var ps = !{products};
+          var pc = $('#products');
+          var r = undefined;
+          for (var i = 0; i < ps.length; i++) {
+              var p = ps[i];
+              if (i % 4 === 0) {
+                  if (r !== undefined) pc.append(r);
+                  r = row();
+              }
+              var pt = p.prdSupId__supName + ' / ' + p.prdName;
+              var pi = $('<img/>', { style: 'height: 200px;', title: p.prdReference, src: 'data:' + p.prdPicture.mime + ';base64,' + p.prdPicture.content }).popover({ content: p.prdDescription });
+              var pp = $('<strong/>', { style: 'margin-right: 25px;' }).append(parseFloat(p.prdUnitPrice).toFixed(2) + ' &euro;');
+              r.append(panel($('<div/>').append(pi).append('<hr/>').append($('<p/>', { style: 'text-align: right;' }).append(pp)), pt, 'success', 3));
+          }
+          if (r !== undefined) pc.append(r);
+      });
+  body
+    div.container(style='margin-top: 25px')
+      div.well
+        div(style='text-align: center;')
+          img(src='logo.png', alt='Simplicit&eacute; Software', style='width: 100%; max-width: 500px;')
+      div.row
+        #products.col-lg-12
+      hr
+      p(style='text.align: center;') &copy; Simplict&eacute; Software
