@@ -19,33 +19,18 @@ var demo = require("simplicite").session(params);
 
 var prd = demo.getBusinessObject("DemoProduct");
 
-// Promise approach
-/*
-var Q = require("q");
 app.get("/", function(req, res) {
-	(function(filters, params) {
-		var d = Q.defer();
-		prd.search(function(list) { d.resolve(list); }, filters, params);
-		return d.promise;
-	})(undefined, { inlineDocs: true }).then(function(list) {
+	prd.search(undefined, { inlineDocs: true }).then(function(list) {
 		console.log(list.length + " products loaded !");
 		res.render("index", { products: JSON.stringify(list), });
 	});
 });
-*/
-
-// Callback approach
-app.get("/", function(req, res) {
-	prd.search(function(list) {
-		console.log(list.length + " products loaded !");
-		res.render("index", { products: JSON.stringify(list), });
-	}, undefined, { inlineDocs: true });
-});
 
 app.get("/grant", function(req, res) {
-	demo.getGrant(function(news) {
-		res.render("grant", { grant: JSON.stringify(demo.grant), });
-	}, { inlinePicture: true });
+	demo.getGrant({ inlinePicture: true }).then(function(grant) {
+		console.log("Hello " + grant.login + "!");
+		res.render("grant", { grant: JSON.stringify(grant), });
+	});
 });
 
 console.log("Server started");
