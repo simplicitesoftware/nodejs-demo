@@ -3,7 +3,7 @@ function row() {
 }
 
 function cell(span) {
-	return $('<div/>').addClass('col-lg-' + span);
+	return $('<div/>').addClass('col-md-' + span);
 }
 
 function panel(body, heading, style, span) {
