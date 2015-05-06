@@ -3,9 +3,9 @@
 	"version": "0.0.1",
 	"description": "A sample Node.js app for Simplicite(R)",
 	"dependencies": {
-		"express": "*",
-		"jade": "*",
-		"simplicite": "*"
+		"express": "latest",
+		"jade": "latest",
+		"simplicite": "latest"
 	},
 	"engines": {
 		"node": "*"

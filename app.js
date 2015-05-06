@@ -10,7 +10,7 @@ var port = (process.env.VCAP_APP_PORT || 3000);
 var params = {
 	host: process.env.SIMPLICITE_HOST || "localhost",
 	port: process.env.SIMPLICITE_POST || 8080,
-	root: process.env.SIMPLICITE_ROOT || "demows",
+	root: process.env.SIMPLICITE_ROOT || "",
 	user: process.env.SIMPLICITE_USER || "admin",
 	password: process.env.SIMPLICITE_PASSWORD || "admin",
 	debug: false
