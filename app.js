@@ -1,24 +1,21 @@
-var express = require('express');
-var app = express();
-app.use(express.static(__dirname + '/public'));
-app.set('view engine', 'jade');
-app.set('views', __dirname + '/views');
-
-var host = (process.env.VCAP_APP_HOST || 'localhost');
-var port = (process.env.VCAP_APP_PORT || 3000);
-
 var params = {
-	scheme: process.env.SIMPLICITE_SCHEME || 'http',
-	host: process.env.SIMPLICITE_HOST || 'demo.apps.simplicite.io',
-	port: process.env.SIMPLICITE_PORT || 80,
-	root: process.env.SIMPLICITE_ROOT || '',
-	user: process.env.SIMPLICITE_USER || 'admin',
-	password: process.env.SIMPLICITE_PASSWORD || 'admin',
+	scheme: process.env.VCAP_SIMPLICITE_SCHEME || 'http',
+	host: process.env.VCAP_SIMPLICITE_HOST || 'demo.apps.simplicite.io',
+	port: process.env.VCAP_SIMPLICITE_PORT || 80,
+	root: process.env.VCAP_SIMPLICITE_ROOT || '',
+	user: process.env.VCAP_SIMPLICITE_USER || 'admin',
+	password: process.env.VCAP_SIMPLICITE_PASSWORD || 'admin',
 	debug: true
 };
 var demo = require('simplicite').session(params);
 
 var prd = demo.getBusinessObject('DemoProduct');
+
+var express = require('express');
+var app = express();
+app.use(express.static(__dirname + '/public'));
+app.set('view engine', 'jade');
+app.set('views', __dirname + '/views');
 
 app.get('/', function(req, res) {
 	console.log('Home page requested');
@@ -42,5 +39,9 @@ app.get('/health', function(req, res) {
 	});
 });
 
-console.log('Server listening on ' + host + ':' + port);
+var host = (process.env.VCAP_APP_HOST || 'localhost');
+var port = (process.env.VCAP_APP_PORT || 3000);
+
 app.listen(port, host);
+
+console.log('Server listening on ' + host + ':' + port);
