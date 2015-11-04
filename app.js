@@ -26,9 +26,9 @@ app.get("/", function(req, res) {
 	});
 });
 
-app.get("/grant", function(req, res) {
+app.get("/user", function(req, res) {
 	demo.getGrant({ inlinePicture: true }).then(function(grant) {
-		res.render("grant", { grant: JSON.stringify(grant), });
+		res.render("user", { grant: JSON.stringify(grant), });
 	});
 });
 

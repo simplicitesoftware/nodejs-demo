@@ -5,8 +5,8 @@ html(lang="en")
     script(type="text/javascript").
       $(document).ready(function() {
           var grant = !{grant};
-          $("#grant-picture").append($("<img/>", { src: "data:" + grant.picture.mime + ";base64," + grant.picture.content }));
-          $("#grant-info").append($("<h3/>").text(grant.firstname + " " + grant.lastname)).append($("<p/>").text(grant.email));
+          $("#user-picture").append($("<img/>", { src: "data:" + grant.picture.mime + ";base64," + grant.picture.content }));
+          $("#user-info").append($("<h3/>").text(grant.firstname + " " + grant.lastname)).append($("<p/>").text(grant.email));
       });
   body
     div.container(style="margin-top: 25px")
@@ -14,6 +14,6 @@ html(lang="en")
         div(style="text-align: center;")
           img(src="logo.png", alt="Simplicit&eacute; Software", style="width: 100%; max-width: 500px;")
       div.row
-        #grant-picture.col-md-3
-        #grant-info.col-md-9
+        #user-picture.col-md-2
+        #user-info.col-md-10
       include foot
