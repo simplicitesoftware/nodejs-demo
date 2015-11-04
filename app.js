@@ -8,12 +8,12 @@ var host = (process.env.VCAP_APP_HOST || "localhost");
 var port = (process.env.VCAP_APP_PORT || 3000);
 
 var params = {
-	host: process.env.SIMPLICITE_HOST || "demo.apps.simplicite.fr",
-	port: process.env.SIMPLICITE_POST || 8080,
+	host: process.env.SIMPLICITE_HOST || "demo.apps.simplicite.io",
+	port: process.env.SIMPLICITE_POST || 80,
 	root: process.env.SIMPLICITE_ROOT || "",
 	user: process.env.SIMPLICITE_USER || "admin",
 	password: process.env.SIMPLICITE_PASSWORD || "admin",
-	debug: false
+	debug: true
 };
 var demo = require("simplicite").session(params);
 
