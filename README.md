@@ -20,7 +20,11 @@ Then you can run the application by:
 
 	node app.js
 
-The default URL to point to is: `http://localhost:3000`
+The base URL to point to is: `http://localhost:3000`
+
+- the root page displays the demo product catalog
+- the `/user` page displays information about the user
+- the `/health` page displays health check data
 
 Usage on CloudFoundry
 ---------------------

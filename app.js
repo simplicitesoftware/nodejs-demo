@@ -28,8 +28,13 @@ app.get("/", function(req, res) {
 
 app.get("/grant", function(req, res) {
 	demo.getGrant({ inlinePicture: true }).then(function(grant) {
-		console.log("Hello " + grant.login + "!");
 		res.render("grant", { grant: JSON.stringify(grant), });
+	});
+});
+
+app.get("/health", function(req, res) {
+	demo.getHealth().then(function(health) {
+		res.render("health", health);
 	});
 });
 
