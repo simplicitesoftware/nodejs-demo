@@ -20,6 +20,7 @@ var demo = require("simplicite").session(params);
 var prd = demo.getBusinessObject("DemoProduct");
 
 app.get("/", function(req, res) {
+	console.log("Home page requested");
 	prd.search(undefined, { inlineDocs: true }).then(function(list) {
 		console.log(list.length + " products loaded !");
 		res.render("index", { products: JSON.stringify(list), });
@@ -27,16 +28,18 @@ app.get("/", function(req, res) {
 });
 
 app.get("/user", function(req, res) {
+	console.log("User page requested");
 	demo.getGrant({ inlinePicture: true }).then(function(grant) {
 		res.render("user", { grant: JSON.stringify(grant), });
 	});
 });
 
 app.get("/health", function(req, res) {
+	console.log("Health page requested");
 	demo.getHealth().then(function(health) {
 		res.render("health", health);
 	});
 });
 
-console.log("Server started");
+console.log("Server listening on " + host + ":" + port);
 app.listen(port, host);
