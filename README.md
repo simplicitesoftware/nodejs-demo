@@ -4,7 +4,7 @@
 Web frontend demo
 =================
 
-This project is a simple web frontend example using the [Simplicit&eacute;&reg; API for node.js](https://www.npmjs.com/package/simplicite)
+This project is a simple web frontend example using the [Simplicit&eacute;&reg; API for node.js&reg;](https://www.npmjs.com/package/simplicite)
 to connect to a Simplicit&eacute;&reg; demo backend instance.
 
 Usage

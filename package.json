@@ -1,7 +1,7 @@
 {
   "name": "nodejs-demo",
   "version": "0.0.2",
-  "description": "A sample demo node.js app for Simplicite(R) platform", 
+  "description": "A sample demo frontend app using Simplicite(R) API for node.js(R)", 
   "dependencies": {
     "simplicite": "latest",
     "express": "latest",
