@@ -1,7 +1,7 @@
 {
 	"name": "nodejs-demo",
-	"version": "0.0.1",
-	"description": "A sample Node.js app for Simplicite(R)",
+	"version": "0.0.2",
+	"description": "A sample Node.js app for Simplicite(R) platform", 
 	"dependencies": {
 		"express": "latest",
 		"jade": "latest",
@@ -11,5 +11,7 @@
 		"node": "*"
 	},
 	"repository": {
-	}
+	},
+    "author": "Simplicite Software <contact@simplicitesoftware.com> (http://www.simplicitesoftware.com/)",
+    "license": "Apache 2.0"
 }
