@@ -9,6 +9,6 @@ applications:
   disk_quota: 1024M
   memory: 128M
   env:
-    SIMPLICITE_HOST: "simplicite-demo.mybluemix.net"
+    SIMPLICITE_HOST: "demo.apps.simplicite.io"
     SIMPLICITE_PORT: 80
     SIMPLICITE_ROOT: ""

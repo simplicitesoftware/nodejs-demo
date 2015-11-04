@@ -4,23 +4,23 @@
 Web frontend demo
 =================
 
-This project is a web frontend demo using the Node.js API to connect
-to a Simplicit&eacute;&reg; backend instance.
+This project is a simple web frontend example using the [Simplicit&eacute;&reg; API for node.js](https://www.npmjs.com/package/simplicite)
+to connect to a Simplicit&eacute;&reg; demo backend instance.
 
 Usage
 -----
 
 This project is packaged to deploy on CloudFoundry but can also be used locally.
 
-To run it clocally you need to install (or upgrade) dependencies:
+To run it locally you need to install (or upgrade) the required packages:
 
-	npm install q express jade simplicite
+	npm install simplicite express jade
 
 Then you can run the application by:
 
 	node app.js
 
-The base URL to point to is: `http://localhost:3000`
+The base URL to point to is then: `http://localhost:3000`
 
 - the root page displays the demo product catalog
 - the `/user` page displays information about the user
@@ -44,7 +44,6 @@ To undeploy manually use:
 
 License
 =======
-
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
