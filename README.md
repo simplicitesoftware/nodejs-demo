@@ -24,7 +24,6 @@ The base URL to point to is then: `http://localhost:3000`
 
 - the root page displays the demo product catalog
 - the `/user` page displays information about the user
-- the `/health` page displays health check data
 
 Usage on CloudFoundry
 ---------------------
