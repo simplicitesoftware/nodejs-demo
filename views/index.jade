@@ -16,7 +16,7 @@ html(lang='en')
               var pt = p.prdSupId__supName + ' / ' + p.prdName;
               var pi = $('<img/>', { style: 'height: 200px;', title: p.prdReference, src: 'data:' + p.prdPicture.mime + ';base64,' + p.prdPicture.content }).popover({ content: p.prdDescription });
               var pp = $('<strong/>', { style: 'margin-right: 25px;' }).append(parseFloat(p.prdUnitPrice).toFixed(2) + ' &euro;');
-              r.append(panel($('<div/>').append(pi).append('<hr/>').append($('<p/>', { style: 'text-align: right;' }).append(pp)), pt, 'success', 3));
+              r.append(panel($('<div/>').append(pi).append('<hr/>').append($('<p/>', { style: 'text-align: right;' }).append(pp)), pt, 'default', 3));
           }
           if (r !== undefined) pc.append(r);
       });
