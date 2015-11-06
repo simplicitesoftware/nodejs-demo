@@ -1,11 +1,11 @@
 doctype html
-html(lang="en")
+html(lang='en')
   head
     include head
-    script(type="text/javascript").
+    script(type='text/javascript').
       $(document).ready(function() {
           var ps = !{products};
-          var pc = $("#products");
+          var pc = $('#products');
           var r = undefined;
           for (var i = 0; i < ps.length; i++) {
               var p = ps[i];
@@ -13,18 +13,18 @@ html(lang="en")
                   if (r !== undefined) pc.append(r);
                   r = row();
               }
-              var pt = p.prdSupId__supName + " / " + p.prdName;
-              var pi = $("<img/>", { style: "height: 200px;", title: p.prdReference, src: "data:" + p.prdPicture.mime + ";base64," + p.prdPicture.content }).popover({ content: p.prdDescription });
-              var pp = $("<strong/>", { style: "margin-right: 25px;" }).append(parseFloat(p.prdUnitPrice).toFixed(2) + " &euro;");
-              r.append(panel($("<div/>").append(pi).append("<hr/>").append($("<p/>", { style: "text-align: right;" }).append(pp)), pt, "success", 3));
+              var pt = p.prdSupId__supName + ' / ' + p.prdName;
+              var pi = $('<img/>', { style: 'height: 200px;', title: p.prdReference, src: 'data:' + p.prdPicture.mime + ';base64,' + p.prdPicture.content }).popover({ content: p.prdDescription });
+              var pp = $('<strong/>', { style: 'margin-right: 25px;' }).append(parseFloat(p.prdUnitPrice).toFixed(2) + ' &euro;');
+              r.append(panel($('<div/>').append(pi).append('<hr/>').append($('<p/>', { style: 'text-align: right;' }).append(pp)), pt, 'success', 3));
           }
           if (r !== undefined) pc.append(r);
       });
   body
-    div.container(style="margin-top: 25px")
+    div.container(style='margin-top: 25px')
       div.well
-        div(style="text-align: center;")
-          img(src="logo.png", alt="Simplicit&eacute; Software", style="width: 100%; max-width: 500px;")
+        div(style='text-align: center;')
+          img(src='logo.png', alt='Simplicit&eacute; Software', style='width: 100%; max-width: 500px;')
       div.row
         #products.col-md-12
       include foot

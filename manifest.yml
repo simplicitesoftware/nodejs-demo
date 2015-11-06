@@ -9,6 +9,6 @@ applications:
   disk_quota: 1024M
   memory: 128M
   env:
-    SIMPLICITE_HOST: "demo.apps.simplicite.io"
-    SIMPLICITE_PORT: 80
-    SIMPLICITE_ROOT: ""
+    VCAP_SIMPLICITE_URL: "http://demo.apps.simplicite.io"
+    VCAP_SIMPLICITE_USER: "admin"
+    VCAP_SIMPLICITE_PASSWORD: "admin"
