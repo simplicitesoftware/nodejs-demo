@@ -15,6 +15,9 @@ app.set('view engine', 'jade');
 app.set('views', __dirname + '/views');
 
 app.get('/', function(req, res) {
+	res.header('Cache-Control', 'private, no-cache, no-store, no-transform, must-revalidate');
+	res.header('Expires', '-1');
+	res.header('Pragma', 'no-cache');
 	console.log('Home page requested');
 	prd.search(undefined, { inlineDocs: true }).then(function(list) {
 		console.log(list.length + ' products loaded !');
@@ -23,6 +26,9 @@ app.get('/', function(req, res) {
 });
 
 app.get('/user', function(req, res) {
+	res.header('Cache-Control', 'private, no-cache, no-store, no-transform, must-revalidate');
+	res.header('Expires', '-1');
+	res.header('Pragma', 'no-cache');
 	console.log('User page requested');
 	demo.getGrant({ inlinePicture: true }).then(function(grant) {
 		res.render('user', { grant: JSON.stringify(grant), });
