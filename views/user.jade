@@ -6,7 +6,7 @@ html(lang='en')
       $(document).ready(function() {
           var grant = !{grant};
           $('#user-picture').append($('<img/>', { src: 'data:' + grant.picture.mime + ';base64,' + grant.picture.content }));
-          $('#user-info').append($('<h3/>').text(grant.firstname + ' ' + grant.lastname)).append($('<p/>').text(grant.email));
+          $('#user-info').append($('<h4/>').text(grant.firstname + ' ' + grant.lastname)).append($('<p/>').text(grant.email));
       });
   body
     div.container(style='margin-top: 25px')
