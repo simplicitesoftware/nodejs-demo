@@ -1,3 +1,5 @@
+"use strict";
+
 var params = {
 	url: process.env.VCAP_SIMPLICITE_URL || 'http://demo.apps.simplicite.io',
 	user: process.env.VCAP_SIMPLICITE_USER || 'admin',
@@ -35,8 +37,9 @@ app.get('/user', function(req, res) {
 	});
 });
 
-var host = (process.env.VCAP_APP_HOST || 'localhost');
-var port = (process.env.VCAP_APP_PORT || 3000);
+var args = process.argv.slice(2);
+var host = process.env.VCAP_APP_HOST || args[0] || 'localhost';
+var port = process.env.VCAP_APP_PORT || args[1] || 3000;
 
 app.listen(port, host);
 
