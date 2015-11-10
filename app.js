@@ -16,6 +16,10 @@ app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'jade');
 app.set('views', __dirname + '/views');
 
+var args = process.argv.slice(2);
+var serverHost = process.env.VCAP_APP_HOST || args[0] || 'localhost';
+var serverPort = process.env.VCAP_APP_PORT || args[1] || 3000;
+
 app.get('/', function(req, res) {
 	res.header('Cache-Control', 'private, no-cache, no-store, no-transform, must-revalidate');
 	res.header('Expires', '-1');
@@ -37,10 +41,5 @@ app.get('/user', function(req, res) {
 	});
 });
 
-var args = process.argv.slice(2);
-var host = process.env.VCAP_APP_HOST || args[0] || 'localhost';
-var port = process.env.VCAP_APP_PORT || args[1] || 3000;
-
-app.listen(port, host);
-
-console.log('Server listening on ' + host + ':' + port);
+app.listen(parseInt(serverPort), serverHost);
+console.log('Server listening on ' + serverHost + ':' + serverPort);
