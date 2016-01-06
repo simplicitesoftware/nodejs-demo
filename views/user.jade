@@ -9,11 +9,9 @@ html(lang='en')
           $('#user-info').append($('<h4/>').text(grant.firstname + ' ' + grant.lastname)).append($('<p/>').text(grant.email));
       });
   body
-    div.container(style='margin-top: 25px')
-      div.well
-        div(style='text-align: center;')
-          img(src='logo.png', alt='Simplicit&eacute; Software', style='width: 100%; max-width: 450px;')
+    div.container
+      include header
       div.row
         #user-picture.col-md-2
         #user-info.col-md-10
-      include foot
+      include footer
