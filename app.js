@@ -8,7 +8,7 @@ var params = {
 };
 var demo = require('simplicite').session(params);
 
-var prd = demo.getBusinessObject('DemoProduct');
+var product = demo.getBusinessObject('DemoProduct');
 
 var express = require('express');
 var app = express();
@@ -25,7 +25,7 @@ app.get('/', function(req, res) {
 	res.header('Expires', '-1');
 	res.header('Pragma', 'no-cache');
 	console.log('Home page requested');
-	prd.search(undefined, { inlineDocs: true }).then(function(list) {
+	product.search(undefined, { inlineDocs: true }).then(function(list) {
 		console.log(list.length + ' products loaded !');
 		res.render('index', { products: JSON.stringify(list), });
 	});
