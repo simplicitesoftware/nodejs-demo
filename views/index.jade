@@ -13,9 +13,9 @@ html(lang='en')
                   if (r !== undefined) pc.append(r);
                   r = row();
               }
-              var pt = p.prdSupId__supName + ' / ' + p.prdName;
-              var pi = $('<img/>', { style: 'height: 200px;', title: p.prdReference, src: 'data:' + p.prdPicture.mime + ';base64,' + p.prdPicture.content }).popover({ content: p.prdDescription });
-              var pp = $('<strong/>', { style: 'margin-right: 25px;' }).append(parseFloat(p.prdUnitPrice).toFixed(2) + ' &euro;');
+              var pt = p.demoPrdSupId__demoSupName + ' / ' + p.demoPrdName;
+              var pi = $('<img/>', { style: 'height: 200px;', title: p.demoPrdReference, src: 'data:' + p.demoPrdPicture.mime + ';base64,' + p.demoPrdPicture.content }).popover({ content: p.demoPrdDescription });
+              var pp = $('<strong/>', { style: 'margin-right: 25px;' }).append(parseFloat(p.demoPrdUnitPrice).toFixed(2) + ' &euro;');
               r.append(panel($('<div/>').append(pi).append('<hr/>').append($('<p/>', { style: 'text-align: right;' }).append(pp)), pt, 'default', 3));
           }
           if (r !== undefined) pc.append(r);
