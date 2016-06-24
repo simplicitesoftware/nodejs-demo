@@ -4,7 +4,9 @@ applications:
   host: nodejs-demo
   command: node app.js
   path: .
-  domain: cfapps.io
+  # PIVOTAL: domain: cfapps.io
+  # BLUEMIX: domain: mybluemix.net
+  domain: mydomain.com
   instances: 1
   disk_quota: 1024M
   memory: 128M
