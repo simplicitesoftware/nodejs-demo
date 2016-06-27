@@ -11,6 +11,7 @@ applications:
   disk_quota: 1024M
   memory: 128M
   env:
-    VCAP_SIMPLICITE_URL: "http://demo.apps.simplicite.io"
-    VCAP_SIMPLICITE_USER: "admin"
-    VCAP_SIMPLICITE_PASSWORD: "admin"
+    SIMPLICITE_WEBSITE: https://www.simplicite.io
+    SIMPLICITE_BASEURL: "http://demo.apps.simplicite.io"
+    SIMPLICITE_USER: "admin"
+    SIMPLICITE_PASSWORD: "admin"
