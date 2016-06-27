@@ -12,9 +12,9 @@ Usage
 
 This project is packaged to deploy on CloudFoundry but can also be used locally.
 
-To run it locally you need to install (or upgrade) the required packages:
+To run it locally you need to install (or update) the required packages:
 
-	npm install simplicite express jade
+	npm install
 
 Then you can run the application by:
 

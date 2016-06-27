@@ -5,7 +5,7 @@
   "dependencies": {
     "simplicite": "latest",
     "express": "latest",
-    "jade": "latest"
+    "pug": "latest"
   },
   "engines": {
     "node": ">=4.4"

@@ -10,7 +10,7 @@ var params = {
 	url: process.env.SIMPLICITE_BASEURL || 'http://demo.apps.simplicite.io',
 	user: process.env.SIMPLICITE_USER || 'admin',
 	password: process.env.SIMPLICITE_PASSWORD || 'admin',
-	debug: true
+	debug: false
 };
 var demo = require('simplicite').session(params);
 
@@ -19,7 +19,7 @@ var product = demo.getBusinessObject('DemoProduct');
 var express = require('express');
 var app = express();
 app.use(express.static(__dirname + '/public'));
-app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 app.set('views', __dirname + '/views');
 
 var args = process.argv.slice(2);
