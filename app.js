@@ -7,9 +7,9 @@ function headers(res) {
 }
 
 var params = {
-	url: process.env.SIMPLICITE_BASEURL || 'http://demo.apps.simplicite.io',
-	user: process.env.SIMPLICITE_USER || 'admin',
-	password: process.env.SIMPLICITE_PASSWORD || 'admin',
+	url: process.env.SIMPLICITE_BASEURL || 'https://demo.simplicite.cloud',
+	user: process.env.SIMPLICITE_USER || 'public',
+	password: process.env.SIMPLICITE_PASSWORD || 'simplicite',
 	debug: false
 };
 var demo = require('simplicite').session(params);

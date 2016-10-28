@@ -12,6 +12,6 @@ applications:
   memory: 128M
   env:
     SIMPLICITE_WEBSITE: https://www.simplicite.io
-    SIMPLICITE_BASEURL: "http://demo.apps.simplicite.io"
-    SIMPLICITE_USER: "admin"
-    SIMPLICITE_PASSWORD: "admin"
+    SIMPLICITE_BASEURL: "https://demo.simplicite.cloud"
+    SIMPLICITE_USER: "public"
+    SIMPLICITE_PASSWORD: "simplicite"
