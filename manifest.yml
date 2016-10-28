@@ -13,5 +13,5 @@ applications:
   env:
     SIMPLICITE_WEBSITE: https://www.simplicite.io
     SIMPLICITE_BASEURL: "https://demo.simplicite.cloud"
-    SIMPLICITE_USER: "public"
+    SIMPLICITE_USER: "website"
     SIMPLICITE_PASSWORD: "simplicite"

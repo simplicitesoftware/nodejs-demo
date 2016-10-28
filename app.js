@@ -8,7 +8,7 @@ function headers(res) {
 
 var params = {
 	url: process.env.SIMPLICITE_BASEURL || 'https://demo.simplicite.cloud',
-	user: process.env.SIMPLICITE_USER || 'public',
+	user: process.env.SIMPLICITE_USER || 'website',
 	password: process.env.SIMPLICITE_PASSWORD || 'simplicite',
 	debug: false
 };
