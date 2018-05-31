@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 function headers(res) {
 	res.header('Cache-Control', 'private, no-cache, no-store, no-transform, must-revalidate');
@@ -7,10 +7,10 @@ function headers(res) {
 }
 
 const demo = require('simplicite').session({
-        url: process.env.SIMPLICITE_BASEURL || 'https://demo.dev.simplicite.io',
-        user: process.env.SIMPLICITE_USER || 'website',
-        password: process.env.SIMPLICITE_PASSWORD || 'simplicite',
-        debug: false
+	url: process.env.SIMPLICITE_BASEURL || 'https://demo.dev.simplicite.io',
+	username: process.env.SIMPLICITE_USERNAME || 'website',
+	password: process.env.SIMPLICITE_PASSWORD || 'simplicite',
+	debug: false
 });
 
 const express = require('express');
