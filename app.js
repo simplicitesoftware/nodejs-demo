@@ -6,25 +6,20 @@ function headers(res) {
 	res.header('Pragma', 'no-cache');
 }
 
-var params = {
-	url: process.env.SIMPLICITE_BASEURL || 'https://demo40.simplicite.cloud',
-	user: process.env.SIMPLICITE_USER || 'website',
-	password: process.env.SIMPLICITE_PASSWORD || 'simplicite',
-	debug: false
-};
-var demo = require('simplicite').session(params);
+const demo = require('simplicite').session({
+        url: process.env.SIMPLICITE_BASEURL || 'https://demo.dev.simplicite.io',
+        user: process.env.SIMPLICITE_USER || 'website',
+        password: process.env.SIMPLICITE_PASSWORD || 'simplicite',
+        debug: false
+});
 
-var product = demo.getBusinessObject('DemoProduct');
-
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'pug');
 app.set('views', __dirname + '/views');
 
-var args = process.argv.slice(2);
-var serverHost = process.env.VCAP_APP_HOST || args[0] || 'localhost';
-var serverPort = process.env.VCAP_APP_PORT || args[1] || 3000;
+let product = demo.getBusinessObject('DemoProduct');
 
 app.get('/', function(req, res) {
 	console.log('Home page requested');
@@ -42,6 +37,10 @@ app.get('/user', function(req, res) {
 		res.render('user', { grant: JSON.stringify(grant), });
 	});
 });
+
+const args = process.argv.slice(2);
+const serverHost = process.env.VCAP_APP_HOST || args[0] || 'localhost';
+const serverPort = process.env.VCAP_APP_PORT || args[1] || 3000;
 
 app.listen(parseInt(serverPort), serverHost);
 console.log('Server listening on ' + serverHost + ':' + serverPort);
