@@ -6,10 +6,11 @@ function cell(span) {
 	return $('<div/>').addClass('col-md-' + span);
 }
 
-function panel(body, heading, style, span) {
-	var p = $('<div/>').addClass('panel panel-' + (style === undefined ? 'default' : style));
-	p.append($('<div/>').addClass('panel-heading').append($('<h3/>').addClass('panel-title').append(heading)));
-	p.append($('<div/>').addClass('panel-body').append(body));
-	if (span) return cell(span).append(p);
-	return p;
+function card(body, heading, style, span) {
+	var c = $('<div/>').addClass('card card-' + (style === undefined ? 'default' : style));
+	c.append($('<div/>').addClass('card-body')
+		.append($('<h3/>').addClass('card-title').append(heading))
+		.append(body));
+	if (span) return cell(span).append(c);
+	return c;
 }
