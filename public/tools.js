@@ -6,8 +6,8 @@ function cell(span) {
 	return $('<div/>').addClass('col-md-' + span);
 }
 
-function card(body, heading, style, span) {
-	var c = $('<div/>').addClass('card card-' + (style === undefined ? 'default' : style));
+function card(body, heading, span) {
+	var c = $('<div/>').addClass('card'));
 	c.append($('<div/>').addClass('card-body')
 		.append($('<h3/>').addClass('card-title').append(heading))
 		.append(body));
