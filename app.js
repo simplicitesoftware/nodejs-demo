@@ -24,7 +24,7 @@ let product = demo.getBusinessObject('DemoProduct');
 app.get('/', function(req, res) {
 	console.log('Home page requested');
 	headers(res);
-	product.search(undefined, { inlineDocs: true }).then(function(list) {
+	product.search(null, { inlineThumbs: true }).then(function(list) {
 		console.log(list.length + ' products loaded !');
 		res.render('index', { products: JSON.stringify(list), });
 	});
