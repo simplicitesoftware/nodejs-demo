@@ -8,7 +8,7 @@ function cell(span) {
 
 function panel(body, heading, style, span) {
 	var p = $('<div/>').addClass('panel panel-' + (style === undefined ? 'default' : style));
-	p.append($('<div/>').addClass('panel-heading').append($('<h3/>').addClass('panel-title').append(heading)));
+	p.append($('<div/>').addClass('panel-heading').append($('<h1/>').addClass('panel-title').append(heading)));
 	p.append($('<div/>').addClass('panel-body').append(body));
 	if (span) return cell(span).append(p);
 	return p;
