@@ -1,7 +1,7 @@
 ![Simplicit&eacute; Software](https://www.simplicite.io/resources/logos/logo250.png)
 * * *
 
-Web frontend demo
+Node.js&reg; demo
 =================
 
 This project is a simple web frontend example using the [Simplicit&eacute;&reg; node.js&reg; &amp; brower API](https://www.npmjs.com/package/simplicite)
