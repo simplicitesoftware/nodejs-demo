@@ -1,11 +1,11 @@
 ![Simplicit&eacute; Software](https://www.simplicite.io/resources/logos/logo250.png)
-***
+* * *
 
 Web frontend demo
 =================
 
-This project is a simple web frontend example using the [Simplicit&eacute;&reg; API for node.js&reg;](https://www.npmjs.com/package/simplicite)
-to connect to a Simplicit&eacute;&reg; demo backend instance.
+This project is a simple web frontend example using the [Simplicit&eacute;&reg; node.js&reg; &amp; brower API](https://www.npmjs.com/package/simplicite)
+to connect to a Simplicit&eacute;&reg; demo backend instance from the **server-side**.
 
 Usage
 -----
@@ -18,11 +18,15 @@ To run it locally you need to install (or update) the required packages:
 
 Then you can run the application by:
 
-	node app.js [<host, defaults to 'localhost'> [<port, defaults to 3000>]]
+	node app.js
 
-The base URL to point to is then: `http://<host>:<port>`
+The following environment variables are required to point to the appropriate Simplicit&eacute;&reg; backend instance:
 
-- the root page displays the demo product catalog
+- `SIMPLICITE_BASEURL`: base URL of the instance (e.g. `http://<host>:<port>[/<context>]`)
+- `SIMPLICITE_USERNAME`: user name
+- `SIMPLICITE_PASSWORD`: user password
+
+- the `/` root page displays the demo product catalog
 - the `/user` page displays information about the user
 
 Usage on CloudFoundry
