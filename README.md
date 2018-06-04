@@ -4,7 +4,8 @@
 Node.js&reg; demo
 =================
 
-This project is a simple web frontend example using the [Simplicit&eacute;&reg; node.js&reg; &amp; brower API](https://www.npmjs.com/package/simplicite)
+This project is a simple web frontend example using
+the [Simplicit&eacute;&reg; node.js&reg; &amp; brower JavaScript API](https://www.npmjs.com/package/simplicite)
 to connect to a Simplicit&eacute;&reg; demo backend instance from the **server-side**.
 
 Usage
