@@ -16,7 +16,7 @@ html(lang='en')
               var pt = p.demoPrdSupId__demoSupName + ' / ' + p.demoPrdName;
               var pi = $('<img/>', { title: p.demoPrdReference, src: 'data:' + p.demoPrdPicture.mime + ';base64,' + p.demoPrdPicture.thumbnail }).popover({ content: p.demoPrdDescription });
               var pp = $('<strong/>', { style: 'margin-right: 25px;' }).append(parseFloat(p.demoPrdUnitPrice).toFixed(2) + ' &euro;');
-              r.append(card($('<div/>').append(pi).append('<hr/>').append($('<p/>', { style: 'text-align: right;' }).append(pp)), pt, 3));
+              r.append(card($('<div/>').addClass('text-center').append(pi).append('<hr/>').append($('<div/>').addClass('text-right').append(pp)), pt, 3));
           }
           if (r !== undefined) pc.append(r);
       });

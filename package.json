@@ -7,6 +7,9 @@
     "express": "latest",
     "pug": "latest"
   },
+  "scripts": {
+    "start": "node app.js"
+  },
   "engines": {
     "node": ">=4.4"
   },

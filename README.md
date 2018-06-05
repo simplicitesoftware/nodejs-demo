@@ -19,7 +19,7 @@ To run it locally you need to install (or update) the required packages:
 
 Then you can run the application by:
 
-	node app.js
+	npm run start
 
 The following environment variables are required to point to the appropriate Simplicit&eacute;&reg; backend instance:
 
