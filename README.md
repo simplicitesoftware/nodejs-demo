@@ -15,11 +15,15 @@ This project is packaged to deploy on CloudFoundry but can also be used locally.
 
 To run it locally you need to install (or update) the required packages:
 
-	npm install
+```bash
+npm install
+```
 
 Then you can run the application by:
 
-	npm run start
+```bash
+npm start
+```
 
 The following environment variables are required to point to the appropriate Simplicit&eacute;&reg; backend instance:
 
@@ -40,11 +44,15 @@ Adjust the `manifest.yml` to your needs:
 
 To deploy manually use:
 
-	cf push
+```bash
+cf push
+```
 
 To undeploy manually use:
 
-	cf delete <deployment name>
+```bash
+cf delete <deployment name>
+```
 
 License
 =======
