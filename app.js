@@ -33,7 +33,7 @@ demo.login().then(function(params) {
 		console.log('Home page requested');
 		headers(res);
 		product.search(null, { inlineThumbs: true }).then(function(list) {
-			console.log(list.length + ' products loaded !');
+			console.log(list.length + ' products loaded');
 			res.render('index', { products: JSON.stringify(list), });
 		});
 	});
