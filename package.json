@@ -1,11 +1,11 @@
 {
   "name": "nodejs-demo",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "A sample demo frontend app using Simplicite(R) Javascript API",
   "dependencies": {
     "express": "^4.17.1",
     "pug": "^2.0.4",
-    "simplicite": "^1.0.12"
+    "simplicite": "^1.0.13"
   },
   "scripts": {
     "start": "node app.js"
