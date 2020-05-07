@@ -5,24 +5,20 @@ html(lang='en')
     script(type='text/javascript').
       $(document).ready(function() {
           var ps = !{products};
-          var pc = $('#products');
-          var r = undefined;
+          var pc = $('#nodejs-demo-products');
           for (var i = 0; i < ps.length; i++) {
-              var p = ps[i];
-              if (i % 4 === 0) {
-                  if (r !== undefined) pc.append(r);
-                  r = row();
-              }
-              var pt = p.demoPrdSupId__demoSupName + ' / ' + p.demoPrdName;
-              var pi = $('<img/>', { title: p.demoPrdReference, src: 'data:' + p.demoPrdPicture.mime + ';base64,' + p.demoPrdPicture.thumbnail }).popover({ content: p.demoPrdDescription });
-              var pp = $('<strong/>', { style: 'margin-right: 25px;' }).append(parseFloat(p.demoPrdUnitPrice).toFixed(2) + ' &euro;');
-              r.append(card($('<div/>').addClass('text-center').append(pi).append('<hr/>').append($('<div/>').addClass('text-right').append(pp)), pt, 3));
+            var p = ps[i];
+            pc.append(
+              $('<li/>')
+                .append($('<img/>', { title: p.demoPrdReference, src: 'data:' + p.demoPrdPicture.mime + ';base64,' + p.demoPrdPicture.content }))
+                .append($('<h1/>').append(p.demoPrName))
+                .append($('<h2/>').append(p.demoPrdReference))
+                .append($('<p/>').append(p.demoPrdDescription))
+              );
           }
-          if (r !== undefined) pc.append(r);
       });
   body
-    div.container
+    #nodejs-demo
       include header
-      div.row
-        #products.col-md-12
+      ul#nodejs-demo-products
       include footer

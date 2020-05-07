@@ -5,13 +5,12 @@ html(lang='en')
     script(type='text/javascript').
       $(document).ready(function() {
           var grant = !{grant};
-          $('#user-picture').append($('<img/>', { src: 'data:' + grant.picture.mime + ';base64,' + grant.picture.content }));
-          $('#user-info').append($('<h4/>').text(grant.firstname + ' ' + grant.lastname)).append($('<p/>').text(grant.email));
+          $('#nodejs-demo-user-picture').append($('<img/>', { src: 'data:' + grant.picture.mime + ';base64,' + grant.picture.content }));
+          $('#nodejs-demo-user-info').append($('<h4/>').text(grant.firstname + ' ' + grant.lastname)).append($('<p/>').text(grant.email));
       });
   body
-    div.container
+    #nodejs-demo
       include header
-      div.row
-        #user-picture.col-md-2
-        #user-info.col-md-10
+      #modejs-demo-user-picture.col-md-2
+      #nodejs-demo-user-info.col-md-10
       include footer

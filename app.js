@@ -32,7 +32,7 @@ demo.login().then(function(params) {
 	app.get('/', function(req, res) {
 		console.log('Home page requested');
 		headers(res);
-		product.search(null, { inlineThumbs: true }).then(function(list) {
+		product.search(null, { inlineDocuments: [ 'demoPrdPicture' ] }).then(function(list) {
 			console.log(list.length + ' products loaded');
 			res.render('index', { products: JSON.stringify(list), });
 		});
