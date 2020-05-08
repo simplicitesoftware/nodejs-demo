@@ -14,7 +14,7 @@ function headers(res) {
 }
 
 var demo = require('simplicite').session({
-	url: process.env.SIMPLICITE_BASEURL || 'https://demo.dev.simplicite.io',
+	url: process.env.SIMPLICITE_URL || 'https://demo.dev.simplicite.io',
 	username: process.env.SIMPLICITE_USERNAME || 'website',
 	password: process.env.SIMPLICITE_PASSWORD || 'simplicite',
 	debug: false

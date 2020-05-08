@@ -27,7 +27,7 @@ npm start
 
 The following environment variables are required to point to the appropriate Simplicit&eacute;&reg; backend instance:
 
-- `SIMPLICITE_BASEURL`: base URL of the instance (e.g. `http://<host>:<port>[/<context>]`)
+- `SIMPLICITE_URL`: URL of the instance (e.g. `http://<host>:<port>[/<context>]`)
 - `SIMPLICITE_USERNAME`: user name
 - `SIMPLICITE_PASSWORD`: user password
 
