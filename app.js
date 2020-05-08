@@ -42,7 +42,8 @@ demo.login().then(function(params) {
 		console.log('User page requested');
 		headers(res);
 		demo.getGrant({ inlinePicture: true }).then(function(grant) {
-			res.render('user', { grant: JSON.stringify(grant), });
+			console.log(grant);
+			res.render('user', { grant: JSON.stringify(grant) });
 		});
 	});
 
