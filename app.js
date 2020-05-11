@@ -13,46 +13,48 @@ function headers(res) {
 	res.header('Pragma', 'no-cache');
 }
 
-var demo = require('simplicite').session({
+const debug = false;
+const demo = require('simplicite').session({
 	url: process.env.SIMPLICITE_URL || 'https://demo.dev.simplicite.io',
 	username: process.env.SIMPLICITE_USERNAME || 'website',
 	password: process.env.SIMPLICITE_PASSWORD || 'simplicite',
-	debug: false
+	debug: debug
 });
+if (debug) console.log(demo.parameters);
 
-demo.login().then(function(params) {
-	var express = require('express');
-	var app = express();
+demo.login().then(res => {
+	const express = require('express');
+	const app = express();
 	app.use(express.static(__dirname + '/public'));
 	app.set('view engine', 'pug');
 	app.set('views', __dirname + '/views');
 
-	var product = demo.getBusinessObject('DemoProduct');
+	const product = demo.getBusinessObject('DemoProduct');
 
-	app.get('/', function(req, res) {
-		console.log('Home page requested');
+	app.get('/', (req, res) => {
+		if (debug) console.log('Home page requested');
 		headers(res);
-		product.search(null, { inlineDocuments: [ 'demoPrdPicture' ] }).then(function(list) {
-			console.log(list.length + ' products loaded');
-			res.render('index', { products: JSON.stringify(list), });
+		product.search(null, { inlineDocuments: [ 'demoPrdPicture' ] }).then(list => {
+			if (debug) console.log(list.length + ' products loaded');
+			res.render('index', { products: JSON.stringify(list) });
 		});
 	});
 
-	app.get('/user', function(req, res) {
-		console.log('User page requested');
+	app.get('/user', (req, res) => {
+		if (debug) console.log('User page requested');
 		headers(res);
-		demo.getGrant({ inlinePicture: true }).then(function(grant) {
-			console.log(grant);
+		demo.getGrant({ inlinePicture: true }).then(grant => {
+			if (debug) console.log(grant.login + ' loaded');
 			res.render('user', { grant: JSON.stringify(grant) });
 		});
 	});
 
-	var args = process.argv.slice(2);
-	var serverHost = process.env.VCAP_APP_HOST || args[0] || 'localhost';
-	var serverPort = process.env.VCAP_APP_PORT || args[1] || 3000;
+	const args = process.argv.slice(2);
+	const serverHost = process.env.VCAP_APP_HOST || args[0] || 'localhost';
+	const serverPort = process.env.VCAP_APP_PORT || args[1] || 3000;
 
 	app.listen(parseInt(serverPort), serverHost);
-	console.log('Server listening on ' + serverHost + ':' + serverPort);
-}).fail(function(reason) {
-	console.log('ERROR: Login failed (status: ' + reason.status + ', message: ' + reason.message + ')');
+	if (debug) console.log('Server listening on ' + serverHost + ':' + serverPort);
+}).catch(err => {
+	console.err(err);
 });
