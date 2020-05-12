@@ -22,7 +22,9 @@ const app = require('simplicite').session({
 });
 app.debug(app.parameters);
 
-app.login().then(res => {
+app.login().then(login => {
+	app.debug("Logged in as " + login.username);
+
 	const args = process.argv.slice(2);
 	const serverHost = process.env.VCAP_APP_HOST || args[0] || 'localhost';
 	const serverPort = process.env.VCAP_APP_PORT || parseInt(args[1]) || 3000;
