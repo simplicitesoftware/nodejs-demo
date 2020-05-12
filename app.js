@@ -14,47 +14,47 @@ function headers(res) {
 }
 
 const debug = false;
-const demo = require('simplicite').session({
+const app = require('simplicite').session({
 	url: process.env.SIMPLICITE_URL || 'https://demo.dev.simplicite.io',
 	username: process.env.SIMPLICITE_USERNAME || 'website',
 	password: process.env.SIMPLICITE_PASSWORD || 'simplicite',
 	debug: debug
 });
-if (debug) console.log(demo.parameters);
+app.debug(app.parameters);
 
-demo.login().then(res => {
+app.login().then(res => {
+	const args = process.argv.slice(2);
+	const serverHost = process.env.VCAP_APP_HOST || args[0] || 'localhost';
+	const serverPort = process.env.VCAP_APP_PORT || parseInt(args[1]) || 3000;
+
 	const express = require('express');
-	const app = express();
-	app.use(express.static(__dirname + '/public'));
-	app.set('view engine', 'pug');
-	app.set('views', __dirname + '/views');
+	const server = express();
+	server.use(express.static(__dirname + '/public'));
+	server.set('view engine', 'pug');
+	server.set('views', __dirname + '/views');
 
-	const product = demo.getBusinessObject('DemoProduct');
+	const product = app.getBusinessObject('DemoProduct');
 
-	app.get('/', (req, res) => {
-		if (debug) console.log('Home page requested');
+	server.get('/', (req, res) => {
+		app.debug('Home page requested');
 		headers(res);
 		product.search(null, { inlineDocuments: [ 'demoPrdPicture' ] }).then(list => {
-			if (debug) console.log(list.length + ' products loaded');
+			app.debug(list.length + ' products loaded');
 			res.render('index', { products: JSON.stringify(list) });
 		});
 	});
 
-	app.get('/user', (req, res) => {
-		if (debug) console.log('User page requested');
+	server.get('/user', (req, res) => {
+		app.debug('User page requested');
 		headers(res);
-		demo.getGrant({ inlinePicture: true }).then(grant => {
-			if (debug) console.log(grant.login + ' loaded');
+		app.getGrant({ inlinePicture: true }).then(grant => {
+			app.debug(grant.login + ' loaded');
 			res.render('user', { grant: JSON.stringify(grant) });
 		});
 	});
 
-	const args = process.argv.slice(2);
-	const serverHost = process.env.VCAP_APP_HOST || args[0] || 'localhost';
-	const serverPort = process.env.VCAP_APP_PORT || args[1] || 3000;
-
-	app.listen(parseInt(serverPort), serverHost);
-	if (debug) console.log('Server listening on ' + serverHost + ':' + serverPort);
+	server.listen(parseInt(serverPort), serverHost);
+	app.info('Server listening on ' + serverHost + ':' + serverPort);
 }).catch(err => {
-	console.err(err);
+	app.error(err);
 });
