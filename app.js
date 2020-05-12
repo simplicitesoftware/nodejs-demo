@@ -54,7 +54,7 @@ app.login().then(res => {
 	});
 
 	server.listen(parseInt(serverPort), serverHost);
-	app.info('Server listening on ' + serverHost + ':' + serverPort);
+	app.log('Server listening on ' + serverHost + ':' + serverPort);
 }).catch(err => {
-	app.error(err);
+	app.log(err);
 });
