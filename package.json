@@ -1,6 +1,6 @@
 {
   "name": "nodejs-demo",
-  "version": "1.1.12",
+  "version": "1.1.13",
   "description": "A sample demo frontend app using Simplicite(R) Javascript API",
   "dependencies": {
     "express": "latest",
