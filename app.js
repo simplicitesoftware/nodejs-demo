@@ -31,6 +31,7 @@ app.login().then(login => {
 
 	const express = require('express');
 	const server = express();
+	server.disable("x-powered-by");
 	server.use(express.static(__dirname + '/public'));
 	server.set('view engine', 'pug');
 	server.set('views', __dirname + '/views');
