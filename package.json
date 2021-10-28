@@ -1,14 +1,18 @@
 {
   "name": "nodejs-demo",
-  "version": "1.1.16",
+  "version": "2.0.1",
   "description": "A sample demo frontend app using Simplicite(R) Javascript API",
   "dependencies": {
-    "express": "latest",
-    "pug": "latest",
-    "simplicite": "latest"
+    "express": "^4.17.1",
+    "pug": "^3.0.2",
+    "simplicite": "^2.0.1"
+  },
+  "devDependencies": {
+    "npm-check-updates": "^11.8.5"
   },
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "ncu": "ncu"
   },
   "repository": {
     "type": "git",
