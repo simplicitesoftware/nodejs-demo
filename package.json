@@ -1,11 +1,12 @@
 {
   "name": "nodejs-demo",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "A sample demo frontend app using Simplicite(R) Javascript API",
+  "type": "module",
   "dependencies": {
     "express": "^4.17.1",
     "pug": "^3.0.2",
-    "simplicite": "^2.1.0"
+    "simplicite": "^2.2.0"
   },
   "devDependencies": {
     "npm-check-updates": "^11.8.5"

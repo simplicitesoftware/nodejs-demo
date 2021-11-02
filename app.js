@@ -7,6 +7,11 @@
  */
 'use strict';
 
+import simplicite from 'simplicite';
+import express from 'express';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
 function headers(res) {
 	res.header('Cache-Control', 'private, no-cache, no-store, no-transform, must-revalidate');
 	res.header('Expires', '-1');
@@ -14,7 +19,7 @@ function headers(res) {
 }
 
 const debug = false;
-const app = require('simplicite').session({
+const app = simplicite.session({
 	url: process.env.SIMPLICITE_URL || 'https://demo.dev.simplicite.io',
 	username: process.env.SIMPLICITE_USERNAME || 'website',
 	password: process.env.SIMPLICITE_PASSWORD || 'simplicite',
@@ -29,12 +34,12 @@ app.login().then(login => {
 	const serverHost = process.env.VCAP_APP_HOST || args[0] || 'localhost';
 	const serverPort = process.env.VCAP_APP_PORT || parseInt(args[1]) || 3000;
 
-	const express = require('express');
 	const server = express();
 	server.disable("x-powered-by");
-	server.use(express.static(__dirname + '/public'));
+	const dir = dirname(fileURLToPath(import.meta.url));
+	server.use(express.static(dir + '/public'));
 	server.set('view engine', 'pug');
-	server.set('views', __dirname + '/views');
+	server.set('views', dir + '/views');
 
 	const product = app.getBusinessObject('DemoProduct');
 
