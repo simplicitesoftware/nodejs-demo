@@ -27,7 +27,8 @@ const app = simplicite.session({
 });
 app.debug(app.parameters);
 
-app.login().then(login => {
+try {
+	const login = await app.login();
 	app.debug("Logged in as " + login.username);
 
 	const args = process.argv.slice(2);
@@ -43,26 +44,24 @@ app.login().then(login => {
 
 	const product = app.getBusinessObject('DemoProduct');
 
-	server.get('/', (req, res) => {
+	server.get('/', async (req, res) => {
 		app.debug('Home page requested');
 		headers(res);
-		product.search(null, { inlineDocuments: [ 'demoPrdPicture' ] }).then(list => {
-			app.debug(list.length + ' products loaded');
-			res.render('index', { products: JSON.stringify(list) });
-		});
+		const list = await product.search(null, { inlineDocuments: [ 'demoPrdPicture' ] });
+		app.debug(list.length + ' products loaded');
+		res.render('index', { products: JSON.stringify(list) });
 	});
 
-	server.get('/user', (req, res) => {
+	server.get('/user', async (req, res) => {
 		app.debug('User page requested');
 		headers(res);
-		app.getGrant({ inlinePicture: true }).then(grant => {
-			app.debug(grant.login + ' loaded');
-			res.render('user', { grant: JSON.stringify(grant) });
-		});
+		const grant = await app.getGrant({ inlinePicture: true });
+		app.debug(grant.login + ' loaded');
+		res.render('user', { grant: JSON.stringify(grant) });
 	});
 
 	server.listen(parseInt(serverPort), serverHost);
 	app.log('Server listening on ' + serverHost + ':' + serverPort);
-}).catch(err => {
+} catch(err) {
 	app.log(err);
-});
+}
