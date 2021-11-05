@@ -24,6 +24,8 @@ const app = simplicite.session({
 	password: process.env.SIMPLICITE_PASSWORD || 'simplicite',
 	debug: false
 });
+
+app.info(`Version: ${simplicite.constants.MODULE_VERSION}`);
 app.debug(app.parameters);
 
 try {

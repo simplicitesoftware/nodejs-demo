@@ -22,7 +22,7 @@ npm install
 Then you can run the application by:
 
 ```bash
-npm start
+npm serve
 ```
 
 The following environment variables are required to point to the appropriate Simplicit&eacute;&reg; backend instance:
