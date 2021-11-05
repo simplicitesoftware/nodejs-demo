@@ -18,12 +18,11 @@ function headers(res) {
 	res.header('Pragma', 'no-cache');
 }
 
-const debug = false;
 const app = simplicite.session({
 	url: process.env.SIMPLICITE_URL || 'https://demo.dev.simplicite.io',
 	username: process.env.SIMPLICITE_USERNAME || 'website',
 	password: process.env.SIMPLICITE_PASSWORD || 'simplicite',
-	debug: debug
+	debug: false
 });
 app.debug(app.parameters);
 
