@@ -29,8 +29,8 @@ app.info(`Version: ${simplicite.constants.MODULE_VERSION}`);
 app.debug(app.parameters);
 
 try {
-	const login = await app.login();
-	app.debug("Logged in as " + login.username);
+	const user = await app.login();
+	app.debug("Logged in as " + user.login);
 
 	const args = process.argv.slice(2);
 	const serverHost = process.env.VCAP_APP_HOST || args[0] || 'localhost';
@@ -50,7 +50,7 @@ try {
 		headers(res);
 		const list = await product.search(null, { inlineDocuments: [ 'demoPrdPicture' ] });
 		app.debug(list.length + ' products loaded');
-		res.render('index', { products: JSON.stringify(list) });
+		res.render('index', { version: simplicite.constants.MODULE_VERSION, products: JSON.stringify(list) });
 	});
 
 	server.get('/user', async (req, res) => {
@@ -62,7 +62,7 @@ try {
 	});
 
 	server.listen(parseInt(serverPort), serverHost);
-	app.log('Server listening on ' + serverHost + ':' + serverPort);
+	app.info('Server listening on ' + serverHost + ':' + serverPort);
 } catch(err) {
 	app.log(err);
 }

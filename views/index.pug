@@ -4,6 +4,7 @@ html(lang='en')
     include head
     script(type='text/javascript').
       $(document).ready(function() {
+          console.log('Version: #{version}');
           var ps = !{products};
           var pc = $('#nodejs-demo-products');
           for (var i = 0; i < ps.length; i++) {
