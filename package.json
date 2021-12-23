@@ -10,12 +10,12 @@
   },
   "type": "module",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.2",
     "pug": "^3.0.2",
     "simplicite": "^2.2.14"
   },
   "devDependencies": {
-    "npm-check-updates": "^12.0.3"
+    "npm-check-updates": "^12.0.5"
   },
   "scripts": {
     "start": "node app.js",
