@@ -48,21 +48,31 @@ try {
 	server.get('/', async (req, res) => {
 		app.debug('Home page requested');
 		headers(res);
-		const list = await product.search(null, { inlineDocuments: [ 'demoPrdPicture' ] });
-		app.debug(list.length + ' products loaded');
-		res.render('index', { version: simplicite.constants.MODULE_VERSION, products: JSON.stringify(list) });
+		try {
+			const list = await product.search(null, { inlineDocuments: [ 'demoPrdPicture' ] });
+			app.debug(list.length + ' products loaded');
+			res.render('index', { version: simplicite.constants.MODULE_VERSION, products: JSON.stringify(list) });
+		} catch (err) {
+			app.error(err);
+			res.render('index', { error: err.message });
+		}
 	});
 
 	server.get('/user', async (req, res) => {
 		app.debug('User page requested');
 		headers(res);
-		const grant = await app.getGrant({ inlinePicture: true });
-		app.debug(grant.login + ' loaded');
-		res.render('user', { grant: JSON.stringify(grant) });
+		try {
+			const grant = await app.getGrant({ inlinePicture: true });
+			app.debug(grant.login + ' loaded');
+			res.render('user', { grant: JSON.stringify(grant) });
+		} catch (err) {
+			app.error(e);
+			res.render('user', { error: err.message });
+		}
 	});
 
 	server.listen(parseInt(serverPort), serverHost);
 	app.info('Server listening on ' + serverHost + ':' + serverPort);
-} catch(err) {
+} catch (err) {
 	app.log(err);
 }
