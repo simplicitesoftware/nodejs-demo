@@ -15,7 +15,7 @@
     "simplicite": "^2.2.22"
   },
   "devDependencies": {
-    "npm-check-updates": "^12.5.3"
+    "npm-check-updates": "^12.5.4"
   },
   "scripts": {
     "start": "node app.js",
