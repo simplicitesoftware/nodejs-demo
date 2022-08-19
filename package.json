@@ -15,10 +15,12 @@
     "simplicite": "^2.2.25"
   },
   "devDependencies": {
+    "npm-check": "^6.0.1",
     "npm-check-updates": "^16.0.5"
   },
   "scripts": {
     "start": "node app.js",
+    "check": "npm-check --skip-unused",
     "ncu": "ncu"
   }
 }
