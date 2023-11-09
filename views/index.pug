@@ -12,7 +12,7 @@ html(lang='en')
             pc.append(
               $('<li/>')
                 .append($('<img/>', { title: p.demoPrdReference, src: 'data:' + p.demoPrdPicture.mime + ';base64,' + p.demoPrdPicture.content }))
-                .append($('<h1/>').append(p.demoPrName))
+                .append($('<h1/>').append(p.demoPrdName))
                 .append($('<h2/>').append(p.demoPrdReference))
                 .append($('<p/>').append(p.demoPrdDescription))
               );
