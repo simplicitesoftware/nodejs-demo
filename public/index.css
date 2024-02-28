@@ -11,10 +11,11 @@
 #nodejs-demo .error {
   background: #FF0000;
   color: #FFFFFF;
-  padding: 12px;
-  border-radius: 8px;
+  padding: 1rem;
+  border-radius: .75rem;
 }
 #nodejs-demo img {
+  width: 20rem;
   max-width: 75%;
 }
 #nodejs-demo h1 {
@@ -23,7 +24,7 @@
 }
 #nodejs-demo h2 {
   color: #25911e;
-  font-size: 1.25em;
+  font-size: 1.25rem;
   font-style: italic;
 }
 #nodejs-demo p {
@@ -39,11 +40,11 @@
   background-color: #FFFFFF;
   display: inline-block;
   vertical-align: top;
-  border: solid 1px #eee;
-  border-radius: 5px;
-  box-shadow: 5px 5px 10px #ddd;
-  margin: 10px;
-  padding: 10px;
+  border: solid .0625rem #eee;
+  border-radius: .5rem;
+  box-shadow: .5rem .5rem 1rem #ddd;
+  margin: .75rem;
+  padding: .75rem;
   min-width: 200px;
   max-width: 250px;
   height: 350px;

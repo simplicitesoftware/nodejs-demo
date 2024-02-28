@@ -15,7 +15,7 @@
     "simplicite": "^3.0.1"
   },
   "devDependencies": {
-    "npm-check-updates": "^16.14.14"
+    "npm-check-updates": "^16.14.15"
   },
   "engines": {
     "node": ">=18"
