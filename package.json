@@ -10,18 +10,21 @@
   },
   "type": "module",
   "dependencies": {
-    "express": "^4.18.2",
+    "express": "^4.19.2",
     "pug": "^3.0.2",
     "simplicite": "^3.0.1"
   },
   "devDependencies": {
-    "npm-check-updates": "^16.14.15"
+    "eslint": "^8.57.0",
+    "npm-check-updates": "^16.14.18",
+    "pug-lint": "^2.7.0"
   },
   "engines": {
     "node": ">=18"
   },
   "scripts": {
     "start": "node app.js",
+    "lint": "eslint app.js && pug-lint views/head.pug views/header.pug views/footer.pug views/index.pug views/user.pug",
     "ncu": "ncu"
   }
 }
