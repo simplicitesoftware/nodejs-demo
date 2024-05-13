@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "eslint": "^8.57.0",
-    "npm-check-updates": "^16.14.18",
+    "npm-check-updates": "^16.14.20",
     "pug-lint": "^2.7.0"
   },
   "engines": {
