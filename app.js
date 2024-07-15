@@ -19,7 +19,7 @@ function headers(res) {
 }
 
 const app = simplicite.session({
-	url: process.env.SIMPLICITE_URL || 'https://demo.dev.simplicite.io',
+	url: process.env.SIMPLICITE_URL || 'https://demo.dev2.simplicite.io',
 	username: process.env.SIMPLICITE_USERNAME || 'website',
 	password: process.env.SIMPLICITE_PASSWORD || 'simplicite',
 	debug: false
