@@ -21,7 +21,7 @@
 }
 #nodejs-demo-header img {
   width: 20rem;
-  filter: invert(100%);
+  filter: invert(75%);
 }
 #nodejs-demo h1 {
   color: #999;
