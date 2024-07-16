@@ -9,9 +9,8 @@ html(lang='en')
             .append($('<img/>', { src: 'data:' + grant.picture.mime + ';base64,' + grant.picture.content }))
             .append($('<h4/>').text(grant.firstname + ' ' + grant.lastname)).append($('<p/>').text(grant.email));
       });
-  body
-    #nodejs-demo
-      include header
-      ul
-        li#nodejs-demo-user
-      include footer
+  body(id='nodejs-demo')
+    include header
+    ul
+      li#nodejs-demo-user
+    include footer

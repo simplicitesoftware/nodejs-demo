@@ -1,6 +1,8 @@
 #nodejs-demo {
   font-family: Helvetica, Arial, sans-serif;
   text-align: center;
+  background: #000;
+  color: #eee;
 }
 @media screen and (min-width: 1024px) {
   #nodejs-demo {
@@ -9,17 +11,20 @@
   }
 }
 #nodejs-demo .error {
-  background: #FF0000;
-  color: #FFFFFF;
+  background: #f00;
+  color: #fff;
   padding: 1rem;
   border-radius: .75rem;
 }
 #nodejs-demo img {
-  width: 20rem;
   max-width: 75%;
 }
+#nodejs-demo-header img {
+  width: 20rem;
+  filter: invert(100%);
+}
 #nodejs-demo h1 {
-  color: #222;
+  color: #999;
   font-size: 1.5em;
 }
 #nodejs-demo h2 {
@@ -37,16 +42,16 @@
   padding-inline-end: 0;
 }
 #nodejs-demo li {
-  background-color: #FFFFFF;
+  background-color: #333;
   display: inline-block;
   vertical-align: top;
-  border: solid .0625rem #eee;
+  border: solid .0625rem #222;
   border-radius: .5rem;
-  box-shadow: .5rem .5rem 1rem #ddd;
+  box-shadow: .5rem .5rem 1rem #222;
   margin: .75rem;
   padding: .75rem;
-  min-width: 200px;
-  max-width: 250px;
-  height: 350px;
-  overflow: auto;
+  min-width: 15rem;
+  max-width: 15rem;
+  height: 22.5rem;
+  overflow: hidden;
 }
