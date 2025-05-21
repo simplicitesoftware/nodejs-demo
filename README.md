@@ -1,12 +1,12 @@
-![Simplicit&eacute; Software](https://platform.simplicite.io/logos/logo250-grey.png)
+![Simplicité Software](https://platform.simplicite.io/logos/logo250-grey.png)
 * * *
 
 Node.js&reg; demo
 =================
 
 This project is a simple web frontend example using
-the [Simplicit&eacute;&reg; node.js&reg; &amp; brower JavaScript API](https://www.npmjs.com/package/simplicite)
-to connect to a Simplicit&eacute;&reg; demo backend instance from the **server-side**.
+the [Simplicité&reg; node.js&reg; &amp; brower JavaScript API](https://www.npmjs.com/package/simplicite)
+to connect to a Simplicité&reg; demo backend instance from the **server-side**.
 
 Usage
 -----
@@ -25,7 +25,7 @@ Then you can run the application by:
 npm run start
 ```
 
-The following environment variables are required to point to the appropriate Simplicit&eacute;&reg; backend instance:
+The following environment variables are required to point to the appropriate Simplicité&reg; backend instance:
 
 - `SIMPLICITE_URL`: URL of the instance (e.g. `http://<host>:<port>[/<context>]`)
 - `SIMPLICITE_USERNAME`: user name
@@ -40,7 +40,7 @@ Usage on CloudFoundry
 Adjust the `manifest.yml` to your needs:
 
 - The deployment name, host and domain
-- The host, port, root environment variables pointing to the above Simplicit&eacute;&reg; instance
+- The host, port, root environment variables pointing to the above Simplicité&reg; instance
 
 To deploy manually use:
 
@@ -57,7 +57,7 @@ cf delete <deployment name>
 License
 =======
 
-Copyright 2014-2024 Simplicit&eacute; Software
+Copyright 2014-2024 Simplicité Software
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

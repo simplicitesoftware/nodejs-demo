@@ -25,12 +25,12 @@ const app = simplicite.session({
 	debug: false
 });
 
-app.info(`Version: ${simplicite.constants.MODULE_VERSION}`);
+app.info(`Version: ${app.getModuleVersion()}`);
 app.debug(app.parameters);
 
 try {
 	app.login().then(async user => {
-		app.debug('Logged in as ' + user.login);
+		app.debug(`Logged in as ${user.login}`);
 
 		const args = process.argv.slice(2);
 		const serverHost = process.env.VCAP_APP_HOST || args[0] || 'localhost';
@@ -39,9 +39,9 @@ try {
 		const server = express();
 		server.disable('x-powered-by');
 		const dir = dirname(fileURLToPath(import.meta.url));
-		server.use(express.static(dir + '/public'));
+		server.use(express.static(`${dir}/public`));
 		server.set('view engine', 'pug');
-		server.set('views', dir + '/views');
+		server.set('views', `${dir}/views`);
 
 		const product = app.getBusinessObject('DemoProduct');
 
@@ -50,7 +50,7 @@ try {
 			headers(res);
 			try {
 				const list = await product.search(null, { inlineDocuments: [ 'demoPrdPicture' ] });
-				app.debug(list.length + ' products loaded');
+				app.debug(`${list.length} products loaded`);
 				res.render('index', { version: simplicite.constants.MODULE_VERSION, products: JSON.stringify(list) });
 			} catch (err) {
 				app.error(err);
@@ -63,7 +63,7 @@ try {
 			headers(res);
 			try {
 				const grant = await app.getGrant({ inlinePicture: true });
-				app.debug(grant.login + ' loaded');
+				app.debug(`${grant.login} loaded`);
 				res.render('user', { grant: JSON.stringify(grant) });
 			} catch (err) {
 				app.error(err);
@@ -72,7 +72,7 @@ try {
 		});
 
 		server.listen(parseInt(serverPort), serverHost);
-		app.info('Server listening on ' + serverHost + ':' + serverPort);
+		app.info(`Server listening on ${serverHost}:${serverPort}`);
 	});
 } catch (err) {
 	app.log(err);
