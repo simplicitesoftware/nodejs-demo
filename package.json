@@ -25,7 +25,7 @@
   },
   "scripts": {
     "start": "node --import=extensionless/register app.js",
-    "lint": "eslint \"app.js\" && pug-lint views",
+    "lint": "eslint --fix \"*.mjs\" \"app.js\" && pug-lint views",
     "ncu": "ncu"
   }
 }
