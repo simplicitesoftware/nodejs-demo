@@ -15,7 +15,7 @@
     "simplicite": "^3.1.4"
   },
   "devDependencies": {
-    "eslint": "^9.30.1",
+    "eslint": "^9.31.0",
     "extensionless": "^1.9.9",
     "npm-check-updates": "^18.0.1",
     "pug-lint": "^2.7.0"
