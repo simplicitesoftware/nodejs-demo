@@ -10,14 +10,14 @@
   },
   "type": "module",
   "dependencies": {
-    "express": "5.1.0",
+    "express": "5.2.1",
     "pug": "3.0.3",
     "simplicite": "3.1.4"
   },
   "devDependencies": {
-    "eslint": "9.39.1",
+    "eslint": "9.39.2",
     "extensionless": "2.0.2",
-    "npm-check-updates": "19.1.2",
+    "npm-check-updates": "19.2.0",
     "pug-lint": "2.7.0"
   },
   "engines": {
