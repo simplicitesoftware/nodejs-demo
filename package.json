@@ -16,8 +16,8 @@
   },
   "devDependencies": {
     "eslint": "9.39.2",
-    "extensionless": "2.0.5",
-    "npm-check-updates": "19.2.0",
+    "extensionless": "2.0.6",
+    "npm-check-updates": "19.3.1",
     "pug-lint": "2.7.0"
   },
   "engines": {
