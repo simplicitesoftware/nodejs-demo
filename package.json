@@ -18,7 +18,7 @@
     "@eslint/js": "10.0.1",
     "eslint": "10.2.0",
     "extensionless": "2.0.6",
-    "globals": "17.4.0",
+    "globals": "17.5.0",
     "npm-check-updates": "20.0.1",
     "pug-lint": "2.7.0"
   },
