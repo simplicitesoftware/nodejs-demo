@@ -19,7 +19,7 @@
     "eslint": "10.2.1",
     "extensionless": "2.0.6",
     "globals": "17.5.0",
-    "npm-check-updates": "21.0.2",
+    "npm-check-updates": "21.0.3",
     "pug-lint": "2.7.0"
   },
   "engines": {
