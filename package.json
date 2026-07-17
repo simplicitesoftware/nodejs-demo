@@ -16,10 +16,10 @@
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
-    "eslint": "10.5.0",
+    "eslint": "10.7.0",
     "extensionless": "2.0.6",
-    "globals": "17.6.0",
-    "npm-check-updates": "22.2.3",
+    "globals": "17.7.0",
+    "npm-check-updates": "22.2.9",
     "pug-lint": "2.7.0"
   },
   "engines": {
