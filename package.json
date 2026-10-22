@@ -1,7 +1,7 @@
 {
   "name": "nodejs-demo",
   "description": "A sample demo frontend app using Simplicite(R) Javascript API",
-  "version": "3.1.8",
+  "version": "3.1.9",
   "author": "Simplicite Software <contact@simplicitesoftware.com> (http://www.simplicitesoftware.com/)",
   "license": "Apache-2.0",
   "repository": {
@@ -10,16 +10,16 @@
   },
   "type": "module",
   "dependencies": {
-    "express": "5.2.1",
+    "express": "5.3.0",
     "pug": "3.0.4",
-    "simplicite": "3.1.8"
+    "simplicite": "3.1.9"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
-    "eslint": "10.11.0",
+    "eslint": "10.13.0",
     "extensionless": "2.0.6",
     "globals": "17.13.0",
-    "npm-check-updates": "23.1.0",
+    "npm-check-updates": "23.1.1",
     "pug-lint": "2.7.0"
   },
   "engines": {
